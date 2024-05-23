@@ -22,3 +22,8 @@ const products = [
   { product: "coffee", price: 10 },
   { product: "tea", price: "" },
 ];
+
+console.log(
+  // 1. Log Products
+  products.map((product) => product.product).join(", ")
+);
