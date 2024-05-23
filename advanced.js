@@ -53,4 +53,10 @@ console.log(
     return `
     Highest: ${highest.product}. Lowest: ${lowest.product}.`;
   })()
+
+  // 6. Object Transformation 
+  products.reduce((acc, { product, price }) => {
+    acc.push({ name: product, cost: price });
+    return acc;
+  }, [])
 );
