@@ -37,5 +37,20 @@ console.log(
     .reduce((total, product) => total + product.price, 0),
 
   // 4. Concatenate Product Names
-  products.reduce((acc, product) => acc + product.product, "")
+  products.reduce((acc, product) => acc + product.product, ""),
+
+  // 5. Find Extremes in Prices
+  (() => {
+    const pricedProducts = products
+      .filter((product) => product.price.trim() !== "")
+      .map((product) => ({ ...product, price: Number(product.price) }));
+    const highest = pricedProducts.reduce((max, product) =>
+      product.price > max.price ? product : max
+    );
+    const lowest = pricedProducts.reduce((min, product) =>
+      product.price < min.price ? product : min
+    );
+    return `
+    Highest: ${highest.product}. Lowest: ${lowest.product}.`;
+  })()
 );
