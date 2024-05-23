@@ -34,5 +34,8 @@ console.log(
   products
     .filter((product) => product.price.trim() !== "")
     .map((product) => ({ ...product, price: Number(product.price) }))
-    .reduce((total, product) => total + product.price, 0)
+    .reduce((total, product) => total + product.price, 0),
+
+  // 4. Concatenate Product Names
+  products.reduce((acc, product) => acc + product.product, "")
 );
