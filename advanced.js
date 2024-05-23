@@ -28,5 +28,11 @@ console.log(
   products.map((product) => product.product).join(", "),
 
   // 2. Filter by Name Length
-  products.filter((product) => product.product.length <= 5)
+  products.filter((product) => product.product.length <= 5),
+
+  // 3. Price Manipulation
+  products
+    .filter((product) => product.price.trim() !== "")
+    .map((product) => ({ ...product, price: Number(product.price) }))
+    .reduce((total, product) => total + product.price, 0)
 );
