@@ -55,7 +55,7 @@ const nonCapeProvince = provinces.filter(
 console.log(nonCapeProvince.length);
 
 // 6. Finding 'S'
-const containsS = names.map((name) => name.toLowerCase().includes("s"));
+const containsS = names.map((name) => name.includes("S"));
 console.log(containsS);
 
 // 7. Creating Object Mapping
